@@ -1,3 +1,4 @@
+
 INSERT INTO tb_categoria (nome) VALUES ('Eletrônicos');
 INSERT INTO tb_categoria (nome) VALUES ('Livros');
 INSERT INTO tb_categoria (nome) VALUES ('Roupas');
@@ -19,18 +20,18 @@ INSERT INTO tb_cliente (nome, email, telefone) VALUES ('Ana Pereira', 'ana@email
 INSERT INTO tb_cliente (nome, email, telefone) VALUES ('Lucas Rodrigues', 'lucas@email.com', '11955554444');
 
 
-INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-01 10:00:00', 'FINALIZADO', 2500.00, 1);
-INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-02 11:00:00', 'AGUARDANDO_PAGAMENTO', 240.00, 2);
-INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-03 12:00:00', 'CANCELADO', 150.00, 3);
-INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-04 13:00:00', 'FINALIZADO', 35.00, 4);
-INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-05 14:00:00', 'FINALIZADO', 450.00, 5);
+INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-01T10:00:00', 'FINALIZADO', 2500.00, 1);
+INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-02T11:00:00', 'AGUARDANDO_PAGAMENTO', 240.00, 2);
+INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-03T12:00:00', 'CANCELADO', 150.00, 3);
+INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-04T13:00:00', 'FINALIZADO', 35.00, 4);
+INSERT INTO tb_pedido (data, status, valor_total, cliente_id) VALUES ('2026-09-05T14:00:00', 'FINALIZADO', 450.00, 5);
 
 
-INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (2500.00, '2026-09-01 10:05:00', 'APROVADO', 'CARTAO_CREDITO', 1);
-INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (240.00, '2026-09-02 11:05:00', 'PENDENTE', 'PIX', 2);
-INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (150.00, '2026-09-03 12:05:00', 'RECUSADO', 'BOLETO', 3);
-INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (35.00, '2026-09-04 13:05:00', 'APROVADO', 'PIX', 4);
-INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (450.00, '2026-09-05 14:05:00', 'APROVADO', 'CARTAO_CREDITO', 5);
+INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (2500.00, '2026-09-01T10:05:00', 'APROVADO', 'CARTAO_CREDITO', 1);
+INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (240.00, '2026-09-02T11:05:00', 'PENDENTE', 'PIX', 2);
+INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (150.00, '2026-09-03T12:05:00', 'RECUSADO', 'BOLETO', 3);
+INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (35.00, '2026-09-04T13:05:00', 'APROVADO', 'PIX', 4);
+INSERT INTO tb_pagamento (valor, data, status, tipo, pedido_id) VALUES (450.00, '2026-09-05T14:05:00', 'APROVADO', 'CARTAO_CREDITO', 5);
 
 
 INSERT INTO tb_item_pedido (quantidade, valor_unitario, pedido_id, produto_id) VALUES (1, 2500.00, 1, 1);
