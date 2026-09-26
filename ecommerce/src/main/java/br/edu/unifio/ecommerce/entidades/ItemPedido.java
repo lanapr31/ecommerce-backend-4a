@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_item_pedido")
+
 public class ItemPedido {
 
     @Id

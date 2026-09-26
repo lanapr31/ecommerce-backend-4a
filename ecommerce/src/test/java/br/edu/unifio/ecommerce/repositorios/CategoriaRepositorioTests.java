@@ -1,29 +1,38 @@
 package br.edu.unifio.ecommerce.repositorios;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import org.junit.jupiter.api.MethodOrderer;
+import br.edu.unifio.ecommerce.entidades.Categoria;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import br.edu.unifio.ecommerce.entidades.Categoria;
+import java.util.List;
 
-@SpringBootTest 
-@TestMethodOrder (MethodOrderer.OrderAnnotation.class)
+import static org.junit.jupiter.api.Assertions.*;
+
+@SpringBootTest
 public class CategoriaRepositorioTests {
-    @Autowired 
+
+    @Autowired
     private CategoriaRepositorio categoriaRepositorio;
 
     @Test
-    public void deveBuscarUmaCategoriaPorId () {
-      Categoria categoria = categoriaRepositorio.findById(Short.parseShort("1")).orElseThrow();
+    public void deveBuscarUmaCategoriaPorId() {
+        // Busca o ID 1 (Eletrônicos)
+        Categoria categoria = categoriaRepositorio.findById(1)
+                .orElseThrow(() -> new AssertionError("Categoria com ID 1 não foi encontrada"));
 
-      assertNotNull(categoria);
-      assertEquals("Eletrônicos", categoria.getNome());
-
+        // Validações de múltiplos atributos
+        assertNotNull(categoria);
+        assertEquals((short) 1, categoria.getId());
+        assertEquals("Eletrônicos", categoria.getNome());
     }
 
+    @Test
+    public void deveListarTodasAsCategorias() {
+        List<Categoria> categorias = categoriaRepositorio.findAll();
+
+        assertNotNull(categorias);
+        assertFalse(categorias.isEmpty());
+        assertEquals(5, categorias.size()); // Há exatamente 5 categorias no import.sql
+    }
 }
